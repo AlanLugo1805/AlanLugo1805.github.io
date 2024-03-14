@@ -1,0 +1,28 @@
+.parrafo{
+    border: 1px solid black;
+    margin: 10px;
+    text-align: center;
+    padding: 15px;
+    color: blueviolet;
+    font-size: large;
+    font-weight: 400;
+}
+h1{
+    text-align: center;
+}
+body{
+    background-color: rosybrown;
+}
+div{
+    border: 2px solid black;
+    color: blueviolet;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 10px;
+    text-align: center;
+    padding: 15px;
+}
+span ul li{
+    color: blueviolet;
+    font-weight: 500;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
