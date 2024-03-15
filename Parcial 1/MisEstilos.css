@@ -10,6 +10,9 @@
 h1{
     text-align: center;
 }
+#a{
+    background-color: pink;
+}
 body{
     background-color: rosybrown;
 }
@@ -21,8 +24,23 @@ div{
     text-align: center;
     padding: 15px;
 }
+#l{
+    background-color: black;
+}
+#w{
+    text-align: center;
+}
 span ul li{
     color: blueviolet;
     font-weight: 500;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#boton{
+    background-color: palevioletred;
+    border: 1px solid black;
+    font-size: large;
+    width: 500px;
+}
+.link{
+    color: blueviolet;
 }
