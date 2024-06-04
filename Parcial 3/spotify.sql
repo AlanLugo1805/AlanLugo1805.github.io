@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-05-2024 a las 04:37:28
+-- Tiempo de generación: 04-06-2024 a las 03:48:45
 -- Versión del servidor: 10.1.39-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -58,8 +58,16 @@ INSERT INTO `artistas` (`id`, `nombre`, `des`) VALUES
 
 CREATE TABLE `artistas_canciones` (
   `id` int(11) NOT NULL,
-  `artistas_id` int(11) NOT NULL
+  `artistas_id` int(11) NOT NULL,
+  `canciones_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `artistas_canciones`
+--
+
+INSERT INTO `artistas_canciones` (`id`, `artistas_id`, `canciones_id`) VALUES
+(1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -76,6 +84,27 @@ CREATE TABLE `canciones` (
   `activo` tinyint(1) NOT NULL,
   `foto` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `canciones`
+--
+
+INSERT INTO `canciones` (`id`, `nombre`, `genero_id`, `duracion`, `fecha`, `activo`, `foto`) VALUES
+(1, 'Mamichula', 10, '00:03:39', '2020-01-01', 1, 'foto1.png'),
+(2, 'TRANKY FUNKY', 10, '00:02:37', '2024-01-01', 1, 'foto2.png'),
+(3, 'FEEL ME?', 10, '00:03:07', '2022-01-01', 1, 'https://i.scdn.co/image/ab67616d00001e022ccbe28be97225ae844bef55'),
+(4, 'REAL GANGSTA LOVE', 10, '00:02:25', '2024-01-01', 1, 'foto3.png'),
+(5, 'DANCE CRIP', 10, '00:02:45', '2022-01-01', 1, 'foto4.png'),
+(6, 'THE ROOF IS ON FIRE', 10, '00:01:51', '2024-01-01', 1, 'foto5.png'),
+(7, 'SOLO POR VOS', 10, '00:03:19', '2022-01-01', 1, 'foto6.png'),
+(8, 'Los Aparatos', 10, '00:03:52', '2022-01-01', 1, 'foto7.png'),
+(9, 'RAIN', 10, '00:03:00', '2022-01-01', 1, 'foto8.png'),
+(10, 'RAIN 2', 10, '00:02:53', '2023-01-01', 1, 'foto9.png'),
+(11, 'RAIN 3', 10, '00:02:29', '2024-01-01', 1, 'foto10.png'),
+(12, 'OHH BABY', 10, '00:02:27', '2024-01-01', 1, 'foto11.png'),
+(13, 'PLO PLO', 10, '00:01:42', '2024-03-23', 1, 'foto12.png'),
+(14, 'NIGHT', 10, '00:02:53', '2024-03-23', 1, 'foto13.png'),
+(15, 'NO CAP', 8, '00:02:06', '2024-03-23', 1, 'foto13.png');
 
 -- --------------------------------------------------------
 
@@ -114,7 +143,8 @@ INSERT INTO `generos` (`id`, `nombre`) VALUES
 (7, 'Electronica'),
 (8, 'rap'),
 (9, 'indie'),
-(10, 'Hip-hop');
+(10, 'Hip-hop'),
+(11, 'Pop');
 
 -- --------------------------------------------------------
 
@@ -230,7 +260,8 @@ ALTER TABLE `artistas`
 --
 ALTER TABLE `artistas_canciones`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `artistas_id` (`artistas_id`);
+  ADD KEY `artistas_id` (`artistas_id`),
+  ADD KEY `canciones_id` (`canciones_id`);
 
 --
 -- Indices de la tabla `canciones`
@@ -296,13 +327,13 @@ ALTER TABLE `artistas`
 -- AUTO_INCREMENT de la tabla `artistas_canciones`
 --
 ALTER TABLE `artistas_canciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `canciones`
 --
 ALTER TABLE `canciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `favoritos`
@@ -314,7 +345,7 @@ ALTER TABLE `favoritos`
 -- AUTO_INCREMENT de la tabla `generos`
 --
 ALTER TABLE `generos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `membresias`
@@ -348,7 +379,8 @@ ALTER TABLE `usuarios`
 -- Filtros para la tabla `artistas_canciones`
 --
 ALTER TABLE `artistas_canciones`
-  ADD CONSTRAINT `artistas_canciones_ibfk_1` FOREIGN KEY (`artistas_id`) REFERENCES `artistas` (`id`);
+  ADD CONSTRAINT `artistas_canciones_ibfk_1` FOREIGN KEY (`artistas_id`) REFERENCES `artistas` (`id`),
+  ADD CONSTRAINT `artistas_canciones_ibfk_2` FOREIGN KEY (`canciones_id`) REFERENCES `canciones` (`id`);
 
 --
 -- Filtros para la tabla `canciones`
