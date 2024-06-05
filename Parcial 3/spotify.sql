@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-06-2024 a las 03:48:45
--- Versión del servidor: 10.1.39-MariaDB
--- Versión de PHP: 7.3.5
+-- Tiempo de generación: 05-06-2024 a las 02:35:19
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -32,7 +31,7 @@ CREATE TABLE `artistas` (
   `id` int(11) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   `des` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `artistas`
@@ -60,7 +59,7 @@ CREATE TABLE `artistas_canciones` (
   `id` int(11) NOT NULL,
   `artistas_id` int(11) NOT NULL,
   `canciones_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `artistas_canciones`
@@ -83,7 +82,7 @@ CREATE TABLE `canciones` (
   `fecha` date NOT NULL,
   `activo` tinyint(1) NOT NULL,
   `foto` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `canciones`
@@ -104,7 +103,37 @@ INSERT INTO `canciones` (`id`, `nombre`, `genero_id`, `duracion`, `fecha`, `acti
 (12, 'OHH BABY', 10, '00:02:27', '2024-01-01', 1, 'foto11.png'),
 (13, 'PLO PLO', 10, '00:01:42', '2024-03-23', 1, 'foto12.png'),
 (14, 'NIGHT', 10, '00:02:53', '2024-03-23', 1, 'foto13.png'),
-(15, 'NO CAP', 8, '00:02:06', '2024-03-23', 1, 'foto13.png');
+(15, 'NO CAP', 8, '00:02:06', '2024-03-23', 1, 'foto14.png'),
+(16, 'Una Foto Remix', 11, '00:04:03', '2024-01-01', 1, 'foto15.png'),
+(17, 'Ojos Verdes', 11, '00:02:22', '2024-01-01', 1, 'foto16.png'),
+(18, 'Qué le pasa conmigo?', 11, '00:02:47', '2023-01-01', 1, 'foto17.png'),
+(19, 'Marisola', 11, '00:03:57', '2022-01-01', 1, 'foto18.png'),
+(20, 'Dispara', 11, '00:02:23', '2023-01-01', 1, 'foto19.png'),
+(21, 'Otra Noche', 6, '00:03:18', '2022-01-01', 1, 'foto20.png'),
+(22, 'X ESO BB', 11, '00:03:13', '2023-01-01', 1, 'foto21.png'),
+(23, 'Entre Nosotros', 11, '00:04:20', '2022-01-01', 1, 'foto22.png'),
+(24, '8 AM', 2, '00:02:27', '2023-01-01', 1, 'foto23.png'),
+(25, 'Ya No', 11, '00:02:51', '2023-01-01', 1, 'foto24.png'),
+(26, 'NO voy a llorar :´)', 11, '00:02:58', '2023-01-01', 1, 'foto25.png'),
+(27, 'Se va 1 llegan 2', 11, '00:02:23', '2023-01-01', 1, 'foto26.png'),
+(28, 'Llámame', 11, '00:02:04', '2023-01-01', 1, 'foto27.png'),
+(29, 'Tuyo', 11, '00:02:13', '2023-01-01', 1, 'foto28.png'),
+(30, 'CAEN LAS ESTRELLAS', 11, '00:02:25', '2023-01-01', 1, 'foto29.png'),
+(31, 'Moonlight', 11, '00:03:07', '2023-01-01', 1, 'foto30.png'),
+(32, 'Igual Que Un Ángel', 2, '00:04:20', '2024-01-01', 1, 'foto31.png'),
+(33, 'telepatía', 11, '00:02:40', '2022-01-01', 1, 'foto32.png'),
+(34, 'After The Storm', 11, '00:03:27', '2018-01-01', 1, 'foto33.png'),
+(35, 'Melting', 11, '00:03:28', '2015-01-01', 1, 'foto34.png'),
+(36, 'Dead To Me', 11, '00:03:19', '2018-01-01', 1, 'foto35.png'),
+(37, 'Labios Mordidos', 2, '00:03:15', '2024-01-01', 1, 'foto36.png'),
+(38, 'SAD GIRLZ LUV MONEY', 11, '00:03:24', '2021-01-01', 1, 'foto37.png'),
+(39, 'moonlight - speed up', 11, '00:02:36', '2023-01-01', 1, 'foto38.png'),
+(40, 'I Wish You Roses', 11, '00:03:39', '2023-01-01', 1, 'foto39.png'),
+(41, '¿Cómo Así?', 2, '00:02:49', '2024-01-01', 1, 'foto40.png'),
+(42, 'Me Pongo Loca', 2, '00:02:57', '2024-01-01', 1, 'foto41.png'),
+(43, 'Pensamientos Intrusivos', 2, '00:03:12', '2024-01-01', 1, 'foto42.png'),
+(44, 'Diosa', 2, '00:02:36', '2024-01-01', 1, 'foto43.png'),
+(45, 'Te Mata', 2, '00:03:52', '2024-01-01', 1, 'foto44.png');
 
 -- --------------------------------------------------------
 
@@ -116,7 +145,7 @@ CREATE TABLE `favoritos` (
   `id` int(11) NOT NULL,
   `usuarios_id` int(11) NOT NULL,
   `canciones_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -127,7 +156,7 @@ CREATE TABLE `favoritos` (
 CREATE TABLE `generos` (
   `id` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `generos`
@@ -156,7 +185,7 @@ CREATE TABLE `membresias` (
   `id` int(11) NOT NULL,
   `des` varchar(100) NOT NULL,
   `precio` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `membresias`
@@ -183,7 +212,7 @@ CREATE TABLE `playlist` (
   `total_canciones` int(11) NOT NULL,
   `des` varchar(300) NOT NULL,
   `publico` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `playlist`
@@ -214,7 +243,7 @@ CREATE TABLE `playlist_canciones` (
   `canciones_id` int(11) NOT NULL,
   `playlist_id` int(11) NOT NULL,
   `usuarios_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -227,7 +256,7 @@ CREATE TABLE `usuarios` (
   `nombre` varchar(100) NOT NULL,
   `correo` varchar(150) NOT NULL,
   `membresias_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -333,7 +362,7 @@ ALTER TABLE `artistas_canciones`
 -- AUTO_INCREMENT de la tabla `canciones`
 --
 ALTER TABLE `canciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT de la tabla `favoritos`
