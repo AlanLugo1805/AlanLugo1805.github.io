@@ -37,6 +37,46 @@
                 <h1 class="card">SELECT curso.nombreDescriptivo, asignatura.nombre FROM curso INNER JOIN asignatura ON curso.idCurso = asignatura.curso</h1>
                 <img src="img/cap2.png" alt="" class="img-fluid">
             </div>
+            <div class="col">
+                <h2>Consulta #3 Obtener el listado de alumnos con beca </h2>
+                <h1 class="card">SELECT alumno.nombre, alumno.apellido1 FROM alumno WHERE alumno.beca LIKE 'si'</h1>
+                <img src="img/cap3.png" alt="" class="img-fluid">
+            </div>
+            <div class="col">
+                <h2>Consulta #4 Obtener listado de profes y su num. </h2>
+                <h1 class="card">SELECT profesor.nombre, profesor.apellido1, tlfcontactoprof.telefono FROM profesor INNER JOIN tlfcontactoprof</h1>
+                <img src="img/cap4.png" alt="" class="img-fluid">
+            </div>
+            <div class="col">
+                <h2>Consulta #5 Obtener listado de alumnos que esten en programación </h2>
+                <h1 class="card">SELECT * FROM alumno INNER JOIN asignatura WHERE asignatura.idAsignatura LIKE 'AS009'</h1>
+                <img src="img/cap5.png" alt="" class="img-fluid">
+            </div>
+            <div class="col">
+                <h2>Consulta #6 Obtener el listado de profes y sus asignaturas </h2>
+                <h1 class="card">SELECT profesor.nombre, asignatura.nombre FROM profesor INNER JOIN impartir ON profesor.idProfesor = impartir.idProfesor INNER JOIN asignatura ON impartir.idAsignatura=asignatura.idAsignatura</h1>
+                <img src="img/cap6.png" alt="" class="img-fluid">
+            </div>
+            <div class="col">
+                <h2>Consulta #7 Mostrar asignatura que tiene más alumnos y su total</h2>
+                <h1 class="card"></h1>
+                <img src="img/cap7.png" alt="" class="img-fluid">
+            </div>
+            <div class="col">
+                <h2>Consulta #8 Obtener listado de alumnos que le de la clase el profe con ID PRO48 sin importar la asignatura </h2>
+                <h1 class="card"></h1>
+                <img src="img/cap8.png" alt="" class="img-fluid">
+            </div>
+            <div class="col">
+                <h2>Consulta #9 Obtener listado de cursos, con asignatura y el maestro que las da </h2>
+                <h1 class="card"></h1>
+                <img src="img/cap9.png" alt="" class="img-fluid">
+            </div>
+            <div class="col">
+                <h2>Consulta #10 Obtener listado de alumnos, con asignaturas que cursa, profe que la da y curso al que pertenece </h2>
+                <h1 class="card"></h1>
+                <img src="img/cap10.png" alt="" class="img-fluid">
+            </div>
         </div>
     </div>
     <script src="js/bootstrap.js"></script>
