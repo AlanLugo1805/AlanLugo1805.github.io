@@ -59,7 +59,7 @@
             </div>
             <div class="col">
                 <h2>Consulta #7 Mostrar asignatura que tiene más alumnos y su total</h2>
-                <h1 class="card"></h1>
+                <h1 class="card">SELECT asignatura.nombre, COUNT(matricula.idAlumno) FROM asignatura INNER JOIN matricula ON asignatura.idAsignatura = matricula.idAsignatura</h1>
                 <img src="img/cap7.png" alt="" class="img-fluid">
             </div>
             <div class="col">
