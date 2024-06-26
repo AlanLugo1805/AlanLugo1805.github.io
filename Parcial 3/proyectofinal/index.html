@@ -74,7 +74,7 @@
             </div>
             <div class="col">
                 <h2>Consulta #10 Obtener listado de alumnos, con asignaturas que cursa, profe que la da y curso al que pertenece </h2>
-                <h1 class="card"></h1>
+                <h1 class="card">SELECT alumno.nombre, asignatura.nombre, profesor.nombre, curso.nombreDescriptivo FROM alumno INNER JOIN matricula ON alumno.idAlumno=matricula.idAlumno INNER JOIN asignatura ON matricula.idAsignatura=asignatura.idAsignatura INNER JOIN impartir ON impartir.idAsignatura=asignatura.idAsignatura INNER JOIN profesor ON impartir.idProfesor=profesor.idProfesor INNER JOIN curso ON curso.idCurso=asignatura.curso</h1>
                 <img src="img/cap10.png" alt="" class="img-fluid">
             </div>
         </div>
