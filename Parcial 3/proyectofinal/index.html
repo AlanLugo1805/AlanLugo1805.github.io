@@ -69,7 +69,7 @@
             </div>
             <div class="col">
                 <h2>Consulta #9 Obtener listado de cursos, con asignatura y el maestro que las da </h2>
-                <h1 class="card"></h1>
+                <h1 class="card">SELECT curso.nombreDescriptivo, asignatura.nombre, profesor.nombre FROM curso INNER JOIN asignatura ON asignatura.curso=curso.idCurso INNER JOIN profesor ON asignatura.coordinador=profesor.idProfesor</h1>
                 <img src="img/cap9.png" alt="" class="img-fluid">
             </div>
             <div class="col">
