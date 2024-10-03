@@ -107,9 +107,9 @@ function validar(posicion){
                 if (cuadro8 == cuadro7 && cuadro8 == cuadro9) {
                     console.log("GANADOR ---> "+cuadro8)
                     pintar(8,7,9);
-                }else if (cuadro8 == cuadro5 && cuadro8 == cuadro3) {
+                }else if (cuadro8 == cuadro5 && cuadro8 == cuadro2) {
                     console.log("GANADOR ---> "+cuadro8)
-                    pintar(8,5,3);
+                    pintar(8,5,2);
                 }
                 break;
 
