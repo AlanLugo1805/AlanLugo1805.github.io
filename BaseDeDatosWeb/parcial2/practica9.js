@@ -20,5 +20,35 @@ $(document).ready(function(){
             }
         }
     });
- 
+
+    cargarcartas();
+    function cargarcartas(){
+        var carta1 = 0;
+        var carta2 = 0;
+        let asignados = new Array(54).fill(false);
+
+        while(carta1 < 16){
+            var num = Math.floor(Math.random()*54)+1;
+            if(asignados[num-1] == false){
+                $("#carta1").append("<div class='col-sm-3'><img class='img-fluid' src='loteria/"+num+".jpg'></div>")
+                asignados[num-1] = true;
+                carta1++;
+            }else{
+                continue;
+            }
+        }
+
+        asignados = new Array(54).fill(false);
+
+        while(carta2 < 16){
+            var num = Math.floor(Math.random()*54)+1;
+            if(asignados[num-1] == false){
+                $("#carta2").append("<div class='col-sm-3'><img class='img-fluid' src='loteria/"+num+".jpg'></div>")
+                asignados[num-1] = true;
+                carta2++;
+            }else{
+                continue;
+            }
+        }
+    }
  });
